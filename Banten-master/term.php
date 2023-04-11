@@ -1,0 +1,56 @@
+<?php
+
+session_start();
+include 'connect-db.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include 'headtags.html'; ?>
+    <title>Term and Condition</title>
+</head>
+<body>
+    
+    <!-- header -->
+    <?php include 'header.php'; ?>
+    <!-- end header -->
+
+
+    <!-- body -->
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="card">
+                <div class="col center" style="margin:20px">
+                    <img src="img/banner1.png" alt="laundryku" width=100%/><br><br>
+                    <span class="card-title black-text">Syarat dan Ketentuan :</span>
+                </div>
+                <div class="card-content">
+                    <p>1.	Memiliki lokasi usaha toko banten yang strategis dan teridentifikasi oleh google map</p>
+                    <p>2.	Agen memiliki nama usaha serta logo perusahaan agar dapat diposting di website e-Banten</p>
+                    <p>3.	Mampu memberikan layanan Banten dengan kualitas prima dan harga yang bersaing</p>
+                    <p>4.	Memiliki driver yang bersedia untuk melakukan pengantaran terhadap pembelian banten oleh pelanggan</p>
+                    <p>5.	Harga dari pesanan banten ditentukan berdasarkan banyak per pieces (Pcs) ditambah dengan biaya ongkos kirim</p> <!-- masih bingung di term ini -->
+                    <p>6.	Bersedia untuk memberikan informasi kepada pelanggan mengenai harga banten per pieces (pcs)</p> <!-- masih bingung di term ini -->
+                    <p>7.	Bersedia untuk menerapkan sistem poin kepada pelanggan</p>
+                    <p>8.	Agen tidak diperkenankan untuk melakukan kerjasama dengan pihak Toko Banten lainnya</p>
+                    <p>9.	Sebagai kompensasi atas kerjasama adalah sistem bagi hasil sebesar 5%, yang diperhitungkan dari setiap 7 hari</p>
+                    <p>10.	Status agen secara otomatis dicabut apabila melanggar kesepakatan yang telah ditetapkan dalam surat perjanjian kerjasama ataupun agen ingin mengundurkan diri</p>
+                </div>
+                <div class="card-action">
+                    <a href="index.php">HOME - BANTEN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end body -->
+
+
+    <!-- footer -->
+    <?php include 'footer.php' ?>
+    <!-- end footer -->
+</body>
+</html>
