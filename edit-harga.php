@@ -11,12 +11,12 @@ cekAgen();
 $idAgen = $_SESSION["agen"];
 
 // mengambil data harga pada db
-$canang = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'canang'");
-$canang = mysqli_fetch_assoc($canang);
-$pejati = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'pejati'");
-$pejati = mysqli_fetch_assoc($pejati);
-$kajengkliwon = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'kajengkliwon'");
-$kajengkliwon = mysqli_fetch_assoc($kajengkliwon);
+$cuci = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'cuci'");
+$cuci = mysqli_fetch_assoc($cuci);
+$setrika = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'setrika'");
+$setrika = mysqli_fetch_assoc($setrika);
+$komplit = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'komplit'");
+$komplit = mysqli_fetch_assoc($komplit);
 
 ?>
 
@@ -39,15 +39,15 @@ $kajengkliwon = mysqli_fetch_assoc($kajengkliwon);
         <h3 class="header light center">Data Harga</h3>
         <form action="" method="post">
             <div class="input field">
-                <label for="canang">Canang</label>
-                <input type="text" id="canang" name="canang" value="<?= $canang['harga'] ?>">
+                <label for="cuci">Cuci</label>
+                <input type="text" id="cuci" name="cuci" value="<?= $cuci['harga'] ?>">
             </div>
             <div class="input field">
-                <label for="pejati">Pejati</label>
-                <input type="text" id="pejati" name="pejati" value="<?= $pejati['harga'] ?>">
+                <label for="setrika">Setrika</label>
+                <input type="text" id="setrika" name="setrika" value="<?= $setrika['harga'] ?>">
             </div>
             <div class="input field">
-                <label for="kajengkliwon">Kajeng Kliwon</label><input type="text" id="kajengkliwon" name="kajengkliwon" value="<?= $kajengkliwon['harga'] ?>">
+                <label for="komplit">Cuci + Setrika</label><input type="text" id="komplit" name="komplit" value="<?= $komplit['harga'] ?>">
             </div>
             <div class="input field center">
                 <button class="btn-large blue darken-2" type="submit" name="simpan">Simpan Data</button>
@@ -70,25 +70,25 @@ $kajengkliwon = mysqli_fetch_assoc($kajengkliwon);
 function ubahHarga($data){
     global $connect, $idAgen;
 
-    $hargaCanang = htmlspecialchars($data["canang"]);
-    $hargaPejati = htmlspecialchars($data["pejati"]);
-    $hargaKajengKliwon = htmlspecialchars($data["kajengkliwon"]);
+    $hargaCuci = htmlspecialchars($data["cuci"]);
+    $hargaSetrika = htmlspecialchars($data["setrika"]);
+    $hargaKomplit = htmlspecialchars($data["komplit"]);
 
-    validasiHarga($hargaCanang);
-    validasiHarga($hargaPejati);
-    validasiHarga($hargaKajengKliwon);
+    validasiHarga($hargaCuci);
+    validasiHarga($hargaSetrika);
+    validasiHarga($hargaKomplit);
 
     $query1 = "UPDATE harga SET
-        harga = $hargaCanang
-        WHERE jenis = 'canang' AND id_agen = $idAgen
+        harga = $hargaCuci
+        WHERE jenis = 'cuci' AND id_agen = $idAgen
     ";
     $query2 = "UPDATE harga SET
-        harga = $hargaPejati
-        WHERE jenis = 'pejati' AND id_agen = $idAgen
+        harga = $hargaSetrika
+        WHERE jenis = 'setrika' AND id_agen = $idAgen
     ";
     $query3 = "UPDATE harga SET
-        harga = $hargaKajengKliwon
-        WHERE jenis = 'kajengkliwon' AND id_agen = $idAgen
+        harga = $hargaKomplit
+        WHERE jenis = 'komplit' AND id_agen = $idAgen
     ";
 
     mysqli_query($connect,$query1);

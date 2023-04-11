@@ -72,12 +72,12 @@ $agen = mysqli_fetch_assoc($query);
         <div class="col s3 offset-s2">
             <div class="card-panel grey lighten-5 z-depth-1">
                 <div class="row valign-wrapper">
-                    <a href="pesan-tokobanten.php?id=<?= $idAgen ?>&jenis=canang" style="margin:0% 15%"><button class="btn green darken-3">CANANG</button></a>
+                    <a href="pesan-tokobanten.php?id=<?= $idAgen ?>&jenis=cuci" style="margin:0% 15%"><button class="btn green darken-3">CUCI</button></a>
                     <div>
                         <?php
-                            $harga = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'canang'");
+                            $harga = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'cuci'");
                             $harga = mysqli_fetch_assoc($harga);
-                            echo "Rp. " . $harga['harga'] . " /Pcs";
+                            echo "Rp. " . $harga['harga'] . " /Kg";
                         ?>
                     </div>
                 </div>
@@ -86,12 +86,12 @@ $agen = mysqli_fetch_assoc($query);
         <div class="col s3">
             <div class="card-panel grey lighten-5 z-depth-1">
                 <div class="row valign-wrapper">
-                    <a href="pesan-tokobanten.php?id=<?= $idAgen ?>&jenis=pejati" style="margin:0% 15%"><button class="btn green darken-3">BANTEN PEJATI</button></a>
+                    <a href="pesan-tokobanten.php?id=<?= $idAgen ?>&jenis=setrika" style="margin:0% 15%"><button class="btn green darken-3">SETRIKA</button></a>
                     <div>
                         <?php
-                            $harga = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'pejati'");
+                            $harga = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'setrika'");
                             $harga = mysqli_fetch_assoc($harga);
-                            echo "Rp. " . $harga['harga'] . " /Pcs";
+                            echo "Rp. " . $harga['harga'] . " /Kg";
                         ?>
                     </div>
                 </div>
@@ -100,12 +100,12 @@ $agen = mysqli_fetch_assoc($query);
         <div class="col s3">
             <div class="card-panel grey lighten-5 z-depth-1">
                 <div class="row valign-wrapper">
-                    <a href="pesan-tokobanten.php?id=<?= $idAgen ?>&jenis=kajengkliwon" style="margin:0% 15%"><button class="btn green darken-3">KAJENGKLIWON</button></a>
+                    <a href="pesan-tokobanten.php?id=<?= $idAgen ?>&jenis=komplit" style="margin:0% 15%"><button class="btn green darken-3">KOMPLIT</button></a>
                     <div>
                         <?php
-                            $harga = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'kajengkliwon'");
+                            $harga = mysqli_query($connect, "SELECT * FROM harga WHERE id_agen = '$idAgen' AND jenis = 'komplit'");
                             $harga = mysqli_fetch_assoc($harga);
-                            echo "Rp. " . $harga['harga'] . " /Pcs";
+                            echo "Rp. " . $harga['harga'] . " /Kg";
                         ?>
                     </div>
                 </div>

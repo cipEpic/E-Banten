@@ -41,8 +41,8 @@ function validasiTelp($objek){
     }
 }
 
-// Banyak
-function validasiBanyak($objek){
+// Berat
+function validasiBerat($objek){
     if (empty($objek)){
         echo "
             <script>
@@ -53,7 +53,7 @@ function validasiBanyak($objek){
     }else if (!preg_match("/^[0-9]*$/",$objek)){
         echo "
             <script>
-                Swal.fire('Satuan Banyak Hanya Diperbolehkan Angka','','error');
+                Swal.fire('Satuan Berat Hanya Diperbolehkan Angka','','error');
             </script>
         ";
         exit;

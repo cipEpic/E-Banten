@@ -102,7 +102,7 @@ $pelanggan = mysqli_fetch_assoc($query);
                     <h3 class="header light center">Info Paket Banten</h3>
                     <br>
                     <div class="input-field">
-                        <label for="total">Total Banten</label>
+                        <label for="total">Total Pakaian</label>
                         <input type="text" name="total" value="1">
                     </div>
                     <div class="input-field">
@@ -110,25 +110,25 @@ $pelanggan = mysqli_fetch_assoc($query);
                             <li><label for="jenis">Jenis Paket</label></li>
                             <li>
                             <?php if ($jenis == NULL) : ?>
-                                <label><input id="jenis" name="jenis" value="canang" type="radio"/><span>Canang</span> </label>
-                                <label><input id="jenis" name="jenis" value="pejati" type="radio"/><span>Pejati</span> </label>
-                                <label><input id="jenis" name="jenis" value="kajengkliwon" type="radio"/><span>KajengKliwon</span></label><li>
-                            <?php elseif ($jenis == "canang") : ?>
-                                <label><input id="jenis" name="jenis" value="canang" type="radio" checked/><span>Canang</span> </label>
-                                <label><input id="jenis" name="jenis" value="pejati" type="radio"/><span>Pejati</span> </label>
-                                <label><input id="jenis" name="jenis" value="kajengkliwon" type="radio"/><span>KajengKliwon</span></label><li>
-                            <?php elseif ($jenis == "pejati") : ?>
-                                <label><input id="jenis" name="jenis" value="canang" type="radio"/><span>Canang</span> </label>
-                                <label><input id="jenis" name="jenis" value="pejati" type="radio" checked/><span>Pejati</span> </label>
-                                <label><input id="jenis" name="jenis" value="kajengkliwon" type="radio"/><span>KajengKliwon</span></label><li>
-                            <?php elseif ($jenis == "kajengkliwon") : ?>
-                                <label><input id="jenis" name="jenis" value="canang" type="radio"/><span>Canang</span> </label>
-                                <label><input id="jenis" name="jenis" value="pejati" type="radio"/><span>Pejati</span> </label>
-                                <label><input id="jenis" name="jenis" value="kajengkliwon" type="radio" checked/><span>KajengKliwon</span></label><li>
+                                <label><input id="jenis" name="jenis" value="cuci" type="radio"/><span>Cuci</span> </label>
+                                <label><input id="jenis" name="jenis" value="setrika" type="radio"/><span>Setrika</span> </label>
+                                <label><input id="jenis" name="jenis" value="komplit" type="radio"/><span>Komplit</span></label><li>
+                            <?php elseif ($jenis == "cuci") : ?>
+                                <label><input id="jenis" name="jenis" value="cuci" type="radio" checked/><span>Cuci</span> </label>
+                                <label><input id="jenis" name="jenis" value="setrika" type="radio"/><span>Setrika</span> </label>
+                                <label><input id="jenis" name="jenis" value="komplit" type="radio"/><span>Komplit</span></label><li>
+                            <?php elseif ($jenis == "setrika") : ?>
+                                <label><input id="jenis" name="jenis" value="cuci" type="radio"/><span>Cuci</span> </label>
+                                <label><input id="jenis" name="jenis" value="setrika" type="radio" checked/><span>Setrika</span> </label>
+                                <label><input id="jenis" name="jenis" value="komplit" type="radio"/><span>Komplit</span></label><li>
+                            <?php elseif ($jenis == "komplit") : ?>
+                                <label><input id="jenis" name="jenis" value="cuci" type="radio"/><span>Cuci</span> </label>
+                                <label><input id="jenis" name="jenis" value="setrika" type="radio"/><span>Setrika</span> </label>
+                                <label><input id="jenis" name="jenis" value="komplit" type="radio" checked/><span>Komplit</span></label><li>
                             <?php else : ?>
-                                <label><input id="jenis" name="jenis" value="canang" type="radio"/><span>Canang</span> </label>
-                                <label><input id="jenis" name="jenis" value="pejati" type="radio"/><span>Pejati</span> </label>
-                                <label><input id="jenis" name="jenis" value="kajengkliwon" type="radio"/><span>KajengKliwon</span></label><li>
+                                <label><input id="jenis" name="jenis" value="cuci" type="radio"/><span>Cuci</span> </label>
+                                <label><input id="jenis" name="jenis" value="setrika" type="radio"/><span>Setrika</span> </label>
+                                <label><input id="jenis" name="jenis" value="komplit" type="radio"/><span>Komplit</span></label><li>
                             <?php endif; ?>
 
                         </ul>
@@ -138,7 +138,7 @@ $pelanggan = mysqli_fetch_assoc($query);
                         <textarea class="materialize-textarea" name="catatan" id="catatan" cols="30" rows="10" placeholder="Tulis catatan untuk agen"></textarea>
                     </div>
                     <div class="input-field center">
-                        <button class="btn-large green darken-2" type="submit" name="pesan">Buat Pesanan</button>
+                        <button class="btn-large blue darken-2" type="submit" name="pesan">Buat Pesanan</button>
                     </div>
                 </div>
             </form>
@@ -165,7 +165,7 @@ if (isset($_POST["pesan"])){
     $total = htmlspecialchars($_POST["total"]);
 
 
-    $query = mysqli_query($connect, "INSERT INTO banten (id_agen, id_pelanggan, tgl_mulai, jenis, total_pcs, alamat, catatan, status_banten) VALUES ($idAgen, $idPelanggan, '$tgl', '$jenis', $total, '$alamat', '$catatan', 'Masih dalam antrian')");
+    $query = mysqli_query($connect, "INSERT INTO banten (id_agen, id_pelanggan, tgl_mulai, jenis, total_item, alamat, catatan, status_banten) VALUES ($idAgen, $idPelanggan, '$tgl', '$jenis', $total, '$alamat', '$catatan', 'Penjemputan')");
 
     if (mysqli_affected_rows($connect) > 0){
         echo "

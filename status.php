@@ -56,8 +56,8 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                     <td style="font-weight:bold;">ID Banten</td>
                     <td style="font-weight:bold;">Nama Agen</td>
                     <td style="font-weight:bold;">Pelanggan</td>
-                    <td style="font-weight:bold;">Total Pieces</td>
-                    <td style="font-weight:bold;">Banyak (Pcs)</td>
+                    <td style="font-weight:bold;">Total Item</td>
+                    <td style="font-weight:bold;">Berat (kg)</td>
                     <td style="font-weight:bold;">Jenis</td>
                     <td style="font-weight:bold;">Tanggal Dibuat</td>
                     <td style="font-weight:bold;">Status</td>
@@ -83,8 +83,8 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                             echo $data["nama"];
                         ?>
                     </td>
-                    <td><?= $banten["total_pcs"] ?></td>
-                    <td><?= $banten["banyak"] ?></td>
+                    <td><?= $banten["total_item"] ?></td>
+                    <td><?= $banten["berat"] ?></td>
                     <td><?= $banten["jenis"] ?></td>
                     <td><?= $banten["tgl_mulai"] ?></td>
                     <td><?= $banten["status_banten"] ?></td>
@@ -98,8 +98,8 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                 <tr>
                     <td style="font-weight:bold;">ID Banten</td>
                     <td style="font-weight:bold;">Pelanggan</td>
-                    <td style="font-weight:bold;">Total Pieces</td>
-                    <td style="font-weight:bold;">Banyak (Pcs)</td>
+                    <td style="font-weight:bold;">Total Item</td>
+                    <td style="font-weight:bold;">Berat (kg)</td>
                     <td style="font-weight:bold;">Jenis</td>
                     <td style="font-weight:bold;">Tanggal Dibuat</td>
                     <td style="font-weight:bold;">Status</td>
@@ -119,17 +119,17 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                             echo $data["nama"];
                         ?>
                     </td>
-                    <td><?= $banten["total_pcs"] ?></td>
+                    <td><?= $banten["total_item"] ?></td>
                     <td>
-                        <?php if ($banten["banyak"] == NULL) : ?>
+                        <?php if ($banten["berat"] == NULL) : ?>
                             <form action="" method="post">
                                 <input type="hidden" name="id_banten" value="<?= $idBanten ?>">
                                 <div class="input-field">
-                                    <input type="text" size=1 name="banyak">
-                                    <div class="center"><button class="btn green darken-2" type="submit" name="simpanBanyak"><i class="material-icons">send</i></button></div>
+                                    <input type="text" size=1 name="berat">
+                                    <div class="center"><button class="btn green darken-2" type="submit" name="simpanBerat"><i class="material-icons">send</i></button></div>
                                 </div>
                             </form>
-                        <?php else : echo $banten["banyak"]; endif;?>
+                        <?php else : echo $banten["berat"]; endif;?>
                     </td>
                     <td><?= $banten["jenis"] ?></td>
                     <td><?= $banten["tgl_mulai"] ?></td>
@@ -139,8 +139,10 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                             <input type="hidden" name="id_banten" value="<?= $idBanten ?>">
                             <select class="browser-default" name="status_banten" id="status_banten">
                                 <option disabled selected>Status :</option>
-                                <option value="Masih dalam antrian">Masih dalam antrian</option>
-                                <option value="Sedang di Buat">Sedang di buat</option>
+                                <option value="Penjemputan">Penjemputan</option>
+                                <option value="Sedang di Cuci">Sedang di Cuci</option>
+                                <option value="Sedang Di Jemur">Sedang Di Jemur</option>
+                                <option value="Sedang di Setrika">Sedang di Setrika</option>
                                 <option value="Pengantaran">Pengantaran</option>
                                 <option value="Selesai">Selesai</option>
                             </select>
@@ -160,8 +162,8 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                 <tr>
                     <td style="font-weight:bold">ID Banten</td>
                     <td style="font-weight:bold">Agen</td>
-                    <td style="font-weight:bold">Total Pieces</td>
-                    <td style="font-weight:bold">Banyak (Pcs)</td>
+                    <td style="font-weight:bold">Total Item</td>
+                    <td style="font-weight:bold">Berat (kg)</td>
                     <td style="font-weight:bold">Jenis</td>
                     <td style="font-weight:bold">Tanggal Dibuat</td>
                     <td style="font-weight:bold">Status</td>
@@ -180,8 +182,8 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                             echo $data["nama_tokobanten"];
                         ?>
                     </td>
-                    <td><?= $banten["total_pcs"] ?></td>
-                    <td><?= $banten["banyak"] ?></td>
+                    <td><?= $banten["total_item"] ?></td>
+                    <td><?= $banten["berat"] ?></td>
                     <td><?= $banten["jenis"] ?></td>
                     <td><?= $banten["tgl_mulai"] ?></td>
                     <td><?= $banten["status_banten"] ?></td>
@@ -217,7 +219,7 @@ if ( isset($_POST["simpanStatus"]) ){
         // isi data di tabel transaksi
         $tglMulai = $banten["tgl_mulai"];
         $tglSelesai = date("Y-m-d H:i:s");
-        $totalBayar = $banten["banyak"] * $banten["harga"];
+        $totalBayar = $banten["berat"] * $banten["harga"];
         $idBanten = $banten["id_banten"];
         $idPelanggan = $banten["id_pelanggan"];
         // masukkan ke tabel transaksi
@@ -241,16 +243,16 @@ if ( isset($_POST["simpanStatus"]) ){
     
 }
 
-// total banyak
-if (isset($_POST["simpanBanyak"])){
+// total berat
+if (isset($_POST["simpanBerat"])){
 
-    $banyak = htmlspecialchars($_POST["banyak"]);
+    $berat = htmlspecialchars($_POST["berat"]);
     $idBanten = $_POST["id_banten"];
 
     // validasi 
-    validasiBanyak($banyak);
+    validasiBerat($berat);
 
-    mysqli_query($connect, "UPDATE banten SET banyak = $banyak WHERE id_banten = $idBanten");
+    mysqli_query($connect, "UPDATE banten SET berat = $berat WHERE id_banten = $idBanten");
 
     if (mysqli_affected_rows($connect) > 0){
         echo "

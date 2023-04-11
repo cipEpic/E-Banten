@@ -54,8 +54,8 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                     <td style="font-weight:bold;">Kode Transaksi</td>
                     <td style="font-weight:bold;">Agen</td>
                     <td style="font-weight:bold;">Pelanggan</td>
-                    <td style="font-weight:bold;">Total Pieces</td>
-                    <td style="font-weight:bold;">Banyak (Pcs)</td>
+                    <td style="font-weight:bold;">Total Item</td>
+                    <td style="font-weight:bold;">Berat</td>
                     <td style="font-weight:bold;">Jenis</td>
                     <td style="font-weight:bold;">Total Bayar</td>
                     <td style="font-weight:bold;">Tanggal Pesan</td>
@@ -87,10 +87,10 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                             $idBanten = $transaksi["id_banten"];
                             $banten = mysqli_query($connect, "SELECT * FROM banten WHERE id_banten = $idBanten");
                             $banten = mysqli_fetch_assoc($banten);
-                            echo $banten["total_pcs"];
+                            echo $banten["total_item"];
                         ?>
                     </td>
-                    <td><?= $banten["banyak"] ?></td>
+                    <td><?= $banten["berat"] ?></td>
                     <td><?= $banten["jenis"] ?></td>
                     <td><?= $transaksi["total_bayar"] ?></td>
                     <td><?= $transaksi["tgl_mulai"] ?></td>
@@ -114,8 +114,8 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                 <tr>
                     <td style="font-weight:bold">Kode Transaksi</td>
                     <td style="font-weight:bold">Pelanggan</td>
-                    <td style="font-weight:bold">Total Pieces</td>
-                    <td style="font-weight:bold">Banyak (Pcs)</td>
+                    <td style="font-weight:bold">Total Item</td>
+                    <td style="font-weight:bold">Berat</td>
                     <td style="font-weight:bold">Jenis</td>
                     <td style="font-weight:bold">Total Bayar</td>
                     <td style="font-weight:bold">Tanggal Pesan</td>
@@ -139,10 +139,10 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                             $idBanten = $transaksi["id_banten"];
                             $banten = mysqli_query($connect, "SELECT * FROM banten WHERE id_banten = $idBanten");
                             $banten = mysqli_fetch_assoc($banten);
-                            echo $banten["total_pcs"];
+                            echo $banten["total_item"];
                         ?>
                     </td>
-                    <td><?= $banten["banyak"] ?></td>
+                    <td><?= $banten["berat"] ?></td>
                     <td><?= $banten["jenis"] ?></td>
                     <td><?= $transaksi["total_bayar"] ?></td>
                     <td><?= $transaksi["tgl_mulai"] ?></td>
@@ -166,8 +166,8 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                 <tr>
                     <td style="font-weight:bold">Kode Transaksi</td>
                     <td style="font-weight:bold">Agen</td>
-                    <td style="font-weight:bold">Total Pieces</td>
-                    <td style="font-weight:bold">Banyak (Pcs)</td>
+                    <td style="font-weight:bold">Total Item</td>
+                    <td style="font-weight:bold">Berat</td>
                     <td style="font-weight:bold">Jenis</td>
                     <td style="font-weight:bold">Total Bayar</td>
                     <td style="font-weight:bold">Tanggal Pesan</td>
@@ -191,10 +191,10 @@ if(isset($_SESSION["login-admin"]) && isset($_SESSION["admin"])){
                             $idBanten = $transaksi["id_banten"];
                             $banten = mysqli_query($connect, "SELECT * FROM banten WHERE id_banten = $idBanten");
                             $banten = mysqli_fetch_assoc($banten);
-                            echo $banten["total_pcs"];
+                            echo $banten["total_item"];
                         ?>
                     </td>
-                    <td><?= $banten["banyak"] ?></td>
+                    <td><?= $banten["berat"] ?></td>
                     <td><?= $banten["jenis"] ?></td>
                     <td><?= $transaksi["total_bayar"] ?></td>
                     <td><?= $transaksi["tgl_mulai"] ?></td>

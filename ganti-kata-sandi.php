@@ -48,7 +48,7 @@ if((isset($_SESSION["login-admin"]) && isset($_SESSION["admin"]))){
             <input type="password" name="passwordLama" placeholder="Password Lama">
             <input type="password" name="password" placeholder="Password Baru">
             <input type="password" name="repassword" placeholder="Konfirmasi Password Baru">
-            <button class="waves-effect green darken-2 btn" type="submit" name="gantiPassword">Ganti Password</button>
+            <button class="waves-effect blue darken-2 btn" type="submit" name="gantiPassword">Ganti Password</button>
         </div>
     </form>
     <br>

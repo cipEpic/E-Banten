@@ -32,16 +32,17 @@ cekLogin();
                     <span class="card-title black-text">Syarat dan Ketentuan :</span>
                 </div>
                 <div class="card-content">
-                <p>1.	Memiliki lokasi usaha toko banten yang strategis dan teridentifikasi oleh google map</p>
-                    <p>2.	Agen memiliki nama usaha serta logo perusahaan agar dapat diposting di website e-Banten</p>
-                    <p>3.	Mampu memberikan layanan Banten dengan kualitas prima dan harga yang bersaing</p>
-                    <p>4.	Memiliki driver yang bersedia untuk melakukan pengantaran terhadap pembelian banten oleh pelanggan</p>
-                    <p>5.	Harga dari pesanan banten ditentukan berdasarkan banyak per pieces (Pcs) ditambah dengan biaya ongkos kirim</p> <!-- masih bingung di term ini -->
-                    <p>6.	Bersedia untuk memberikan informasi kepada pelanggan mengenai harga banten per pieces (pcs)</p> <!-- masih bingung di term ini -->
+                    <p>1.	Memiliki lokasi usaha laundry yang strategis dan teridentifikasi oleh google map</p>
+                    <p>2.	Agen memiliki nama usaha serta logo perusahaan agar dapat diposting di website laundryKU</p>
+                    <p>3.	Mampu memberikan layanan Laundry dengan kualitas prima dan harga yang bersaing</p>
+                    <p>4.	Memiliki driver yang bersedia untuk melakukan penjemputan dan pengantaran terhadap laundry pelanggan</p>
+                    <p>5.	Harga dari jenis laundry ditentukan berdasarkan berat per kilo (kg) ditambah dengan biaya ongkos kirim</p>
+                    <p>6.	Bersedia untuk memberikan informasi kepada pelanggan mengenai harga Laundry Kiloan</p>
                     <p>7.	Bersedia untuk menerapkan sistem poin kepada pelanggan</p>
-                    <p>8.	Agen tidak diperkenankan untuk melakukan kerjasama dengan pihak Toko Banten lainnya</p>
-                    <p>9.	Sebagai kompensasi atas kerjasama adalah sistem bagi hasil sebesar 5%, yang diperhitungkan dari setiap 7 hari</p>
-                    <p>10.	Status agen secara otomatis dicabut apabila melanggar kesepakatan yang telah ditetapkan dalam surat perjanjian kerjasama ataupun agen ingin mengundurkan diri</p>
+                    <p>8.	Bersedia memberikan kompensasi untuk setiap kemungkinan terjadinya seperti kehilangan pakaian atau kerusakan pakaian pada saat proses Laundry dilakukan</p>
+                    <p>9.	Agen tidak diperkenankan untuk melakukan kerjasama dengan pihak Laundry lainnya</p>
+                    <p>10.	Sebagai kompensasi atas kerjasama adalah sistem bagi hasil sebesar 5%, yang diperhitungkan dari setiap 7 hari</p>
+                    <p>11.	Status agen secara otomatis dicabut apabila melanggar kesepakatan yang telah ditetapkan dalam surat perjanjian kerjasama ataupun agen ingin mengundurkan diri</p>
                 </div>
                 <div class="card-action">
                     <a href="term.php">Baca Selengkapnya</a>
